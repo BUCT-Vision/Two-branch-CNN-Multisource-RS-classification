@@ -2,7 +2,7 @@
 This example implements the paper [Multisource Remote Sensing Data Classification Based on Convolutional Neural Network](http://ieeexplore.ieee.org/document/8068943/)
 
 A two-branch CNN architecture for feasture fusion with HSI and other remote scensing imagery. Reach a quite high classification accuracy. Evaluated on the dataset of Houston, Trento, Salinas and Pavia. 
-![](/figs/arch-01.png)
+![](./figs/arch-01.png)
 
 ## Prerequisites
 - System *Ubuntu 14.04 or upper* 
@@ -35,6 +35,7 @@ Please contact [hsuxu820@gmail.com](hsuxu820@gmail.com)
 
 ## Results
 All the results are cited from original paper. More details can be found in the paper.
+
 | dataset   | Kappa | OA       |
 |-----------|-------|----------|
 | Houston   | 0.8698| 87.98%   |
