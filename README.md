@@ -2,6 +2,7 @@
 This example implements the paper [Multisource Remote Sensing Data Classification Based on Convolutional Neural Network](http://ieeexplore.ieee.org/document/8068943/)
 
 A two-branch CNN architecture for feasture fusion with HSI and other remote scensing imagery. Reach a quite high classification accuracy. Evaluated on the dataset of Houston, Trento, Salinas and Pavia. 
+
 ![](./figs/arch-01.png)
 
 ## Prerequisites
