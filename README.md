@@ -3,7 +3,7 @@ This example implements the paper [Multisource Remote Sensing Data Classificatio
 
 A two-branch CNN architecture for feasture fusion with HSI and other remote scensing imagery. Reach a quite high classification accuracy. Evaluated on the dataset of Houston, Trento, Salinas and Pavia. 
 
-![](./figs/arch-01.png)
+![](https://github.com/Hsuxu/Two-branch-CNN-Multisource-RS-classification/blob/master/figs/arch-01.PNG)
 
 ## Prerequisites
 - System *Ubuntu 14.04 or upper* 
