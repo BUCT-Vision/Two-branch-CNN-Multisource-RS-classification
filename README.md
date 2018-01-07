@@ -18,7 +18,7 @@ pip install -r requirements.txt
 **Please modify line 10-22 in *data_util.py* for the dataset details.**
 
 ### Training
-1. Train hsi
+1. Train HSI
 ```
 python main.py --train hsi --epochs 20 --modelname ./logs/weights/hsi.h5
 ```
