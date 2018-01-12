@@ -32,7 +32,7 @@ python main.py --train finetune --epochs 20 --modelname ./logs/weights/model.h5
 ```
 
 ## Dataset
-Please contact [hsuxu820@gmail.com](hsuxu820@gmail.com)
+Please contact <hsuxu820@gmail.com>
 
 ## Results
 All the results are cited from original paper. More details can be found in the paper.
