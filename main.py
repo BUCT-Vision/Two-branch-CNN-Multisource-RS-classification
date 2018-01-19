@@ -53,13 +53,12 @@ def train_lidar(model):
     creat_train(validation=False)
     creat_train(validation=True)
 
-    Xl_train = np.load('../file/train_Xl.npy')
-    # Xh_train = np.load('../file/train_Xh.npy')
-    Y_train = K.utils.np_utils.to_categorical(np.load('../file/train_Y.npy'))
+    Xl_train = np.load('./file/train_Xl.npy')
+    Y_train = K.utils.np_utils.to_categorical(np.load('./file/train_Y.npy'))
 
-    Xl_val = np.load('../file/val_Xl.npy')
+    Xl_val = np.load('./file/val_Xl.npy')
     # Xh_val = np.load('../file/val_Xh.npy')
-    Y_val = K.utils.np_utils.to_categorical(np.load('../file/val_Y.npy'))
+    Y_val = K.utils.np_utils.to_categorical(np.load('./file/val_Y.npy'))
 
     model_ckt = ModelCheckpoint(filepath=_weights_l, verbose=1, save_best_only=True)
     
@@ -82,13 +81,12 @@ def train_hsi(model):
     creat_train(validation=False)
     creat_train(validation=True)
 
-    # Xl_train = np.load('../file/train_Xl.npy')
-    Xh_train = np.load('../file/train_Xh.npy')
-    Y_train = K.utils.np_utils.to_categorical(np.load('../file/train_Y.npy'))
+    Xh_train = np.load('./file/train_Xh.npy')
+    Y_train = K.utils.np_utils.to_categorical(np.load('./file/train_Y.npy'))
 
     # Xl_val = np.load('../file/val_Xl.npy')
-    Xh_val = np.load('../file/val_Xh.npy')
-    Y_val = K.utils.np_utils.to_categorical(np.load('../file/val_Y.npy'))
+    Xh_val = np.load('./file/val_Xh.npy')
+    Y_val = K.utils.np_utils.to_categorical(np.load('./file/val_Y.npy'))
 
     model_ckt = ModelCheckpoint(filepath=_weights_h, verbose=1, save_best_only=True)
     # if you need tensorboard while training phase just change train fit like 
@@ -110,13 +108,13 @@ def train_full(model):
     creat_train(validation=False)
     creat_train(validation=True)
 
-    Xl_train = np.load('../file/train_Xl.npy')
-    Xh_train = np.load('../file/train_Xh.npy')
-    Y_train = K.utils.np_utils.to_categorical(np.load('../file/train_Y.npy'))
+    Xl_train = np.load('./file/train_Xl.npy')
+    Xh_train = np.load('./file/train_Xh.npy')
+    Y_train = K.utils.np_utils.to_categorical(np.load('./file/train_Y.npy'))
 
-    Xl_val = np.load('../file/val_Xl.npy')
-    Xh_val = np.load('../file/val_Xh.npy')
-    Y_val = K.utils.np_utils.to_categorical(np.load('../file/val_Y.npy'))
+    Xl_val = np.load('./file/val_Xl.npy')
+    Xh_val = np.load('./file/val_Xh.npy')
+    Y_val = K.utils.np_utils.to_categorical(np.load('./file/val_Y.npy'))
 
     model_ckt = ModelCheckpoint(filepath=_weights, verbose=1, save_best_only=True)
     # if you need TTensorboard while training phase just uncomment 
