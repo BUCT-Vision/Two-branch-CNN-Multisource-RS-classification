@@ -44,7 +44,6 @@ if not os.path.exists('logs/weights/'):
     os.makedirs('logs/weights/')
 
 if not os.path.exists(_TFBooard):
-    # shutil.rmtree(_TFBooard)
     os.mkdir(_TFBooard)
 
 def train_lidar(model):
@@ -57,7 +56,6 @@ def train_lidar(model):
     Y_train = K.utils.np_utils.to_categorical(np.load('./file/train_Y.npy'))
 
     Xl_val = np.load('./file/val_Xl.npy')
-    # Xh_val = np.load('../file/val_Xh.npy')
     Y_val = K.utils.np_utils.to_categorical(np.load('./file/val_Y.npy'))
 
     model_ckt = ModelCheckpoint(filepath=_weights_l, verbose=1, save_best_only=True)
@@ -84,7 +82,6 @@ def train_hsi(model):
     Xh_train = np.load('./file/train_Xh.npy')
     Y_train = K.utils.np_utils.to_categorical(np.load('./file/train_Y.npy'))
 
-    # Xl_val = np.load('../file/val_Xl.npy')
     Xh_val = np.load('./file/val_Xh.npy')
     Y_val = K.utils.np_utils.to_categorical(np.load('./file/val_Y.npy'))
 
