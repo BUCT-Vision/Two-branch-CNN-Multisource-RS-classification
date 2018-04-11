@@ -101,17 +101,7 @@ def pixel_branch(input_tensor):
     conv0 = L.Conv1D(filters[3], 11, padding='valid')(input_tensor) 
     conv0 = L.BatchNormalization(axis=-1)(conv0)
     conv0 = L.advanced_activations.LeakyReLU(alpha=0.2)(conv0)
-    # conv0 = L.MaxPool1D(padding='valid')(conv0)
-
-    # conv1 = L.Conv1D(filters[2], 7, padding='valid')(conv0)  
-    # # conv1 = L.BatchNormalization(axis=-1)(conv1)
-    # conv1 = L.advanced_activations.LeakyReLU(alpha=0.2)(conv1)
-    # conv2 = L.Conv1D(filters[3], 5, padding='valid')(conv1)  
-    # # conv2 = L.BatchNormalization(axis=-1)(conv2)
-    # conv2 = L.advanced_activations.LeakyReLU(alpha=0.2)(conv2)
-    # # conv2 = L.MaxPool1D(padding='valid')(conv2) 
     conv3 = L.Conv1D(filters[5], 3, padding='valid')(conv0)  
-    # conv3 = L.BatchNormalization(axis=-1)(conv3)
     conv3 = L.advanced_activations.LeakyReLU(alpha=0.2)(conv3)
     conv3 = L.MaxPool1D(pool_size=2, padding='valid')(conv3)
     conv3 = L.Flatten()(conv3)
@@ -119,17 +109,12 @@ def pixel_branch(input_tensor):
     return conv3
 
 
-
 def lidar_branch():
     ksize = 2 * r + 1
     filters = [64, 128, 256, 512]
     lidar_in = L.Input((ksize, ksize, lchn))
 
-    # l_res = res_branch(input_l, small_mode=True)
-    # l_single = single_layer_branch(input_l, small_mode=True)
-    # l_vgg = vgg_like_branch(input_l, small_mode=True)
-
-    L_cas=cascade_Net(lidar_in)
+    L_cas = cascade_Net(lidar_in)
 
     merge = L.Dropout(0.5)(L_cas)
     logits = L.Dense(NUM_CLASS, activation='softmax')(merge)
@@ -199,20 +184,3 @@ def finetune_Net(hsi_weight=None, lidar_weight=None,trainable=False):
                   loss='categorical_crossentropy', metrics=['acc'])
     return model
 
-# def finetune_Net():
-#     ksize = 2 * r + 1
-#     hsi_in = L.Input((ksize, ksize, hchn))
-#     hsi_pxin = L.Input((hchn, 1))
-#     lidar_in = L.Input((ksize, ksize, lchn))
-
-#     h_simple = simple_cnn_branch(hsi_in, small_mode=False)
-#     px_out = pixel_branch(hsi_pxin)
-#     merge0 = L.concatenate([h_simple, px_out])
-#     L_cas = cascade_Net(lidar_in)
-
-#     merge1 = L.concatenate([merge0, lidar_out], axis=-1)
-#     logits = L.Dense(NUM_CLASS, activation='softmax')(merge1)
-#     adam = K.optimizers.Adam(lr=0.0001)
-#     model.compile(optimizer=adam,
-#                   loss='categorical_crossentropy', metrics=['acc'])
-#     return model
