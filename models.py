@@ -42,7 +42,7 @@ def cascade_block(input, nb_filter, kernel_size=3):
 
 
 def cascade_Net(input_tensor):
-    filters = [16, 32, 64, 96, 128,192, 256, 512]
+    filters = [16, 32, 64, 96, 128, 192, 256, 512]
     conv0 = L.Conv2D(filters[2], (3, 3), padding='same')(input_tensor)
     # conv0 = L.BatchNormalization(axis=-1)(conv0)
     conv0 = L.advanced_activations.LeakyReLU(alpha=0.2)(conv0)
